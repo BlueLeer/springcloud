@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: eureka-client # 为服务命名
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/ # 指定服务注册中心的地址
+  instance:
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+    hostname: eureka-client
