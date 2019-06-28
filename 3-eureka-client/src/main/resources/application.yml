@@ -4,8 +4,9 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:1111/eureka/ # 指定服务注册中心的地址
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/ # 指定服务注册中心的地址
   instance:
     lease-renewal-interval-in-seconds: 30
     lease-expiration-duration-in-seconds: 90
     hostname: eureka-client
+    prefer-ip-address: true # 使用IP地址来定义注册中心的地址

@@ -1,10 +1,13 @@
 spring:
   application:
-    name: peer1
+    name: eureka-server
 server:
   port: 1111
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:1112/eureka/ # 将注册中心地址指向peer2
+      defaultZone: http://peer2:1112/eureka/ # 将注册中心地址指向peer2
+  instance:
+    hostname: peer1
+    prefer-ip-address: true # 使用IP地址来定义注册中心的地址

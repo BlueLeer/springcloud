@@ -1,12 +1,12 @@
-server:
-  port: 1111 # 服务注册中心的端口
-eureka:
-  instance:
-    hostname: localhost
-  server:
-    enable-self-preservation: false # 在本机调试很容易使得心跳成功的比例低于85%,从而触发注册中心的"自我保护机制",因此这里将其的自我保护设为false
-  client:
-    register-with-eureka: false # 不向注册中心注册自己
-    fetch-registry: false # 由于注册中心的职责就是维护服务实例,它并不需要去检索服务,所以也设置成false
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 注册中心地址
+#server:
+#  port: 1111 # 服务注册中心的端口
+#eureka:
+#  instance:
+#    hostname: localhost
+#  server:
+#    enable-self-preservation: false # 在本机调试很容易使得心跳成功的比例低于85%,从而触发注册中心的"自我保护机制",因此这里将其的自我保护设为false
+#  client:
+#    register-with-eureka: false # 不向注册中心注册自己
+#    fetch-registry: false # 由于注册中心的职责就是维护服务实例,它并不需要去检索服务,所以也设置成false
+#    service-url:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # 注册中心地址
