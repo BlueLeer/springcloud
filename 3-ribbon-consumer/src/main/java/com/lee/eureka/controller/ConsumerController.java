@@ -18,9 +18,14 @@ public class ConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @RequestMapping(value = "/consumer", method = RequestMethod.GET)
+    @RequestMapping(value = "/consumer1", method = RequestMethod.GET)
     public String helloEureka() {
-        return restTemplate.getForEntity("http://eureka-client/index", String.class).getBody();
+        return restTemplate.getForEntity("http://eureka-client1/index", String.class).getBody();
+    }
+
+    @RequestMapping(value = "/consumer2", method = RequestMethod.GET)
+    public String helloEureka2() {
+        return restTemplate.getForEntity("http://eureka-client2/index", String.class).getBody();
     }
 
     @RequestMapping(value = "/hello", method = RequestMethod.POST)
@@ -32,4 +37,10 @@ public class ConsumerController {
     public String consumeHello() {
         return restTemplate.postForEntity("http://ribbon-consumer/hello", null, String.class).getBody();
     }
+
+    @RequestMapping(value = "/zhihu", method = RequestMethod.GET)
+    public Object getZhiHuNews() {
+        return restTemplate.getForEntity("http://news-at.zhihu.com/api/4/news/latest", Object.class).getBody();
+    }
+
 }

@@ -11,6 +11,8 @@ import org.springframework.web.client.RestTemplate;
  * @author WangLe
  * @date 2019/1/4 15:11
  * @description 通过该注解,让该应用注册为Eureka客户端应用,以获得服务发现的能力
+ * RestTemplate是封装了HttpConnect的快捷客户端,从名字看肯定是支持Rest请求的,它简化了发起HTTP请求以及处理响应的过程，并且支持REST
+ * 注意:https的请求需要设置一些参数,不然会报错
  */
 @EnableDiscoveryClient
 @SpringBootApplication

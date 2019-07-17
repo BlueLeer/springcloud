@@ -6,7 +6,8 @@ eureka:
     service-url:
       defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/ # 指定服务注册中心的地址
   instance:
-    lease-renewal-interval-in-seconds: 30
-    lease-expiration-duration-in-seconds: 90
+    lease-renewal-interval-in-seconds: 30 # 服务租赁时间间隔(发送心跳的时间间隔)
+    lease-expiration-duration-in-seconds: 90 # 租赁过期时间(若90秒没有收到心跳,租赁就会过时,将会被注册中心剔除服务)
     hostname: eureka-client
     prefer-ip-address: true # 使用IP地址来定义注册中心的地址
+
